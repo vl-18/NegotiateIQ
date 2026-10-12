@@ -1,0 +1,28 @@
+{
+  "hosting": [
+    {
+      "target": "buyer",
+      "public": "ui/dist/buyer",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{ "source": "**", "destination": "/index.html" }],
+      "headers": [
+        {
+          "source": "**/*.@(js|css)",
+          "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
+        }
+      ]
+    },
+    {
+      "target": "merchant",
+      "public": "ui/dist/merchant",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{ "source": "**", "destination": "/index.merchant.html" }],
+      "headers": [
+        {
+          "source": "**/*.@(js|css)",
+          "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
+        }
+      ]
+    }
+  ]
+}

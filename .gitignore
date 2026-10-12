@@ -1,0 +1,25 @@
+# Secrets — never commit these
+.env
+.env.local
+*.env
+service-account-key.json
+*-key.json
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Build outputs
+ui/build/
+ui/dist/
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# IDE
+.vscode/settings.json
+.idea/

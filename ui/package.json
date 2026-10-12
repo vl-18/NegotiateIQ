@@ -1,0 +1,23 @@
+{
+  "name": "negotiateiq-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:buyer": "vite",
+    "dev:merchant": "vite --config vite.merchant.config.js",
+    "build": "npm run build:buyer && npm run build:merchant",
+    "build:buyer": "vite build",
+    "build:merchant": "vite build --config vite.merchant.config.js",
+    "preview:buyer": "vite preview --outDir dist/buyer",
+    "preview:merchant": "vite preview --config vite.merchant.config.js --outDir dist/merchant"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
+}

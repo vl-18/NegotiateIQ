@@ -1,0 +1,11 @@
+sku,name,list_price,price_floor,delivery_options,vouchers_eligible,tier1_min_qty,tier1_discount_pct,tier2_min_qty,tier2_discount_pct,image_url
+SKU-E01,Google Pixel 9 Pro,899.00,719.00,"standard_5d,express_2d",true,10,8,50,15,https://picsum.photos/seed/pixel9pro/400/280
+SKU-E02,Google Pixel 9a,499.00,399.00,"standard_5d,express_2d",true,10,8,50,15,https://picsum.photos/seed/pixel9a/400/280
+SKU-E03,Google Pixel Watch 3 (45mm),349.99,279.99,"standard_5d,express_2d",true,5,8,20,13,https://picsum.photos/seed/pixelwatch3/400/280
+SKU-E04,Google Pixel Buds Pro 2,229.99,179.99,"standard_5d,express_2d",true,10,8,50,14,https://picsum.photos/seed/pixelbuds/400/280
+SKU-E05,HP EliteBook 840 G11 14" Laptop,1299.00,1039.00,standard_5d,false,5,6,20,12,https://picsum.photos/seed/elitebook/400/280
+SKU-E06,HP OfficeJet Pro 9135e All-in-One Printer,399.99,309.99,standard_5d,true,5,8,25,15,https://picsum.photos/seed/officejet/400/280
+SKU-E07,Samsung Galaxy Tab S10+ 12.4",749.99,599.99,"standard_5d,express_2d",true,5,7,20,13,https://picsum.photos/seed/tabs10/400/280
+SKU-E08,Sony WH-1000XM6 Wireless Headphones,349.99,279.99,"standard_5d,express_2d",true,10,8,50,15,https://picsum.photos/seed/sonyxm6/400/280
+SKU-E09,Logitech MX Keys S Wireless Keyboard,119.99,94.99,"standard_5d,express_2d",false,10,8,50,15,https://picsum.photos/seed/mxkeys/400/280
+SKU-E10,LG 32" 4K IPS Monitor (32UP83A),599.99,479.99,standard_5d,true,3,5,10,12,https://picsum.photos/seed/lgmonitor32/400/280

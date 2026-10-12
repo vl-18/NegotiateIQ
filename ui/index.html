@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NegotiateIQ — A2A Negotiation Demo</title>
+    <!-- Tailwind CDN for demo — replace with bundled Tailwind for production -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lora italic — used for the products page tagline -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    :root {
+      --bg:#09090B; --surface:#111115; --surface-hover:#1A1A22; --accent-tint:#13111F;
+      --border:#222228; --accent:#7C6DFA; --accent-hover:#6B5DE8;
+      --text-1:#F0F0F4; --text-2:#7B7B96; --text-3:#3D3D52;
+      --green:#22C55E; --green-tint:#0D1F14; --green-border:#1A3320;
+      --red:#EF4444; --red-tint:#1F0D0D; --red-border:#3D1515;
+      --amber:#F59E0B; --intent-counter-bg:#1E1C2E; --intent-counter:#9D8FFA;
+    }
+    [data-theme="light"] {
+      --bg:#F7F7FB; --surface:#FFFFFF; --surface-hover:#F0F0F8; --accent-tint:#EEF2FF;
+      --border:#E2E2EB; --accent:#6354E8; --accent-hover:#5244D6;
+      --text-1:#18181B; --text-2:#52525B; --text-3:#A1A1AA;
+      --green:#16A34A; --green-tint:#F0FDF4; --green-border:#BBF7D0;
+      --red:#DC2626; --red-tint:#FEF2F2; --red-border:#FECACA;
+      --amber:#D97706; --intent-counter-bg:#EDE9FE; --intent-counter:#6354E8;
+    }
+    body { background:var(--bg); color:var(--text-1); min-height:100vh; margin:0; }
+  </style>
+  <!-- Apply saved theme before paint to prevent flash -->
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
