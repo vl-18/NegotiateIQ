@@ -33,8 +33,8 @@ log = logging.getLogger("negotiateiq.gemini")
 # Config
 # ---------------------------------------------------------------------------
 
-MERCHANT_MODEL = os.getenv("MERCHANT_MODEL", "gemini-3.8-flash")
-SHOPPING_MODEL = os.getenv("SHOPPING_MODEL", "gemini-3.8-flash")
+MERCHANT_MODEL = os.getenv("MERCHANT_MODEL", "gemini-3.5-flash")
+SHOPPING_MODEL = os.getenv("SHOPPING_MODEL", "gemini-3.5-flash")
 
 PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 
@@ -124,7 +124,7 @@ async def _call_gemini_raw(
     user_content: str,
     *,
     response_schema: Optional[Any] = None,
-    max_output_tokens: int = 1024,
+    max_output_tokens: int = 2048,
     temperature: float = 0.7,
     timeout_s: Optional[float] = None,
 ) -> tuple[str, dict]:
