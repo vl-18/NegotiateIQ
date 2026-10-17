@@ -889,10 +889,32 @@ async def shopping_turn_ai(
 
 _RX_ACCEPT  = re.compile(r"\b(i accept|we accept|accepted|i'?ll take it|deal|agreed?|we have a deal|sounds good|let'?s do it)\b", re.I)
 _RX_REJECT  = re.compile(r"\b(i reject|no deal|walk(?:ing)? away|not interested|forget it|no thanks|can'?t do it|too expensive)\b", re.I)
-_RX_PRICE   = re.compile(r"\$\s*(\d+(?:\.\d{1,2})?)")
+# _RX_PRICE   = re.compile(r"\$\s*(\d+(?:\.\d{1,2})?)")
 _RX_QTY     = re.compile(r"\b(\d{1,4})\s*(?:units?|pcs|pieces|items?|qty)\b", re.I)
 _RX_DAYS    = re.compile(r"\b(\d{1,2})\s*-?\s*days?\b", re.I)
 _RX_VOUCHER = re.compile(r"\b(voucher|loyalty|reward points?|perk|early access|discount code)\b", re.I)
+
+_RX_PRICE_PATTERNS = [
+    re.compile(r"\$\s*(\d+(?:\.\d{1,2})?)", re.I),  # $123.45
+    re.compile(r"(\d+(?:\.\d{1,2})?)\s*(?:dollars?|bucks?|usd)\b", re.I),  # 123.45 USD
+    re.compile(r"\busd\s*(\d+(?:\.\d{1,2})?)", re.I),  # USD 123.45
+    re.compile(
+        r"(?:pay(?:ing)?|offer(?:ing)?|bid(?:dding)?|price(?:d)?|at|around|propose[ds]?"
+        r"|how\s+about|what\s+about|let'?s\s+(?:say|do)|going\s+with|willing\s+to\s+(?:pay|offer|bid))"
+        r"\s+(\d+(?:\.\d{1,2})?)", re.I
+    ),
+    re.compile(r"(\d+(?:\.\d{1,2})?)\s*(?:per|each|a)\s*(?:unit|item|piece|product)\b", re.I),  # 123.45 per unit
+]
+
+def _extract_price(text: str) -> float | None:
+    """Extract a price from free text using multiple regex patterns, first match prioritized."""
+    for rx in _RX_PRICE_PATTERNS:
+        if (m := rx.search(text)):
+            try:
+                return float(m.group(1))
+            except ValueError:
+                continue
+    return None
 
 
 def shopping_turn_human(
@@ -902,15 +924,17 @@ def shopping_turn_human(
     message_text:  str,
 ) -> A2AMessage:
     """
-    Human mode: extract intent + terms from typed text via regex, then wrap in A2A.
+    Human mode: extract intent + terms and natural language prices from typed text via regex, then wrap in A2A.
     Intent detection is far more accurate than the old "always QUERY" approach.
     """
     text  = message_text.strip()
     found: dict = {}
 
     # Extract structured fields from free text
-    if (m := _RX_PRICE.search(text)):
-        found["unit_price"] = float(m.group(1))
+    price = _extract_price(text)
+    if price is not None:
+        found["unit_price"] = price
+
     if (m := _RX_QTY.search(text)):
         found["quantity"] = int(m.group(1))
     if re.search(r"next[- ]day|overnight", text, re.I):
