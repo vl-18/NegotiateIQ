@@ -46,13 +46,16 @@ function ProductCard({ product, onNegotiate }) {
       bg-[var(--surface)] hover:border-[var(--accent)] transition-colors group">
 
       {/* Product image */}
-      <div className="w-full aspect-[4/3] bg-[var(--surface-hover)] overflow-hidden flex-shrink-0">
+      {/* old: <div className="w-full aspect-[4/3] bg-[var(--surface-hover)] overflow-hidden flex-shrink-0"> */}
+      {/* new: white box, image centred with padding so the whole product shows */}
+      <div className="w-full aspect-[4/3] bg-white flex items-center justify-center p-3 overflow-hidden flex-shrink-0">
         {product.imageUrl && !imgError ? (
           <img
             src={product.imageUrl}
             alt={product.name}
             onError={() => setImgError(true)}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            /* old: className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" */
+            className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

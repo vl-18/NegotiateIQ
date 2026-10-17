@@ -59,7 +59,8 @@ export default function MerchantProductsScreen({ products }) {
                 <img
                   src={p.imageUrl}
                   alt={p.name}
-                  className="w-24 h-16 object-cover rounded border border-[var(--border)] flex-shrink-0 self-start mt-1"
+                  /* old: className="w-24 h-16 object-cover rounded border border-[var(--border)] flex-shrink-0 self-start mt-1" */
+                  className="w-24 h-16 object-contain bg-white p-1 rounded border border-[var(--border)] flex-shrink-0 self-start mt-1"
                   onError={(e) => { e.target.style.display = "none"; }}
                 />
               )}

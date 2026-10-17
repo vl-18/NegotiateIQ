@@ -101,7 +101,8 @@ function SetupPanel({ product, onGoToProducts, onStart }) {
           <img
             src={product.imageUrl}
             alt={product.name}
-            className="w-20 h-20 object-cover rounded-lg flex-shrink-0 border border-[var(--border)]"
+            /* old: className="w-20 h-20 object-cover rounded-lg flex-shrink-0 border border-[var(--border)]" */
+            className="w-20 h-20 object-contain bg-white p-1 rounded-lg flex-shrink-0 border border-[var(--border)]"
           />
         )}
         <div>

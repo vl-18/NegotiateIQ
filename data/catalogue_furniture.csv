@@ -1,11 +1,11 @@
 sku,name,list_price,price_floor,delivery_options,vouchers_eligible,tier1_min_qty,tier1_discount_pct,tier2_min_qty,tier2_discount_pct,image_url
-SKU-H01,Ergohuman Elite V2 Ergonomic Office Chair,699.00,559.00,standard_5d,true,5,8,20,15,https://picsum.photos/seed/officchair/400/280
-SKU-H02,Flexispot E7 Pro Electric Standing Desk (140x70cm),549.99,439.99,standard_5d,true,5,8,10,13,https://picsum.photos/seed/standingdesk/400/280
-SKU-H03,IKEA KALLAX 4×2 Shelf Unit (White),219.99,169.99,standard_5d,false,5,8,20,15,https://picsum.photos/seed/kallax/400/280
-SKU-H04,Casper Wave Hybrid Mattress (Queen),1999.00,1599.00,standard_5d,true,2,5,5,10,https://picsum.photos/seed/mattress/400/280
-SKU-H05,Philips Hue White & Color Starter Kit (4 Bulbs + Bridge),199.99,154.99,"standard_5d,express_2d",true,10,8,50,15,https://picsum.photos/seed/philipshue/400/280
-SKU-H06,Dyson V15 Detect Cordless Vacuum Cleaner,749.99,599.99,"standard_5d,express_2d",true,3,7,10,13,https://picsum.photos/seed/dysonv15/400/280
-SKU-H07,Nespresso Vertuo Next Coffee Machine,229.99,179.99,"standard_5d,express_2d",true,5,8,20,15,https://picsum.photos/seed/nespresso/400/280
-SKU-H08,Kindle Scribe 64GB Premium Pen Bundle,339.99,269.99,"standard_5d,express_2d",true,5,8,20,13,https://picsum.photos/seed/kindlescribe/400/280
-SKU-H09,Ring Video Doorbell Pro 2 + Chime Pro,279.99,219.99,"standard_5d,express_2d",true,5,8,25,15,https://picsum.photos/seed/ringdoorbell/400/280
-SKU-H10,LIFX A19 Smart LED Bulb (10-pack),149.99,114.99,"standard_5d,express_2d",false,10,8,50,14,https://picsum.photos/seed/lifxbulb/400/280
+SKU-H01,Ergohuman Elite V2 Ergonomic Office Chair,699.00,559.00,standard_5d,true,5,8,20,15,https://www.ergohumanchair.com/wp-content/uploads/2017/02/ergohuman-white-mesh-with-hr.jpg
+SKU-H02,Flexispot E7 Pro Electric Standing Desk (140x70cm),549.99,439.99,standard_5d,true,5,8,10,13,https://www.quill.com/is/image/Quill/6A4055AE-BC24-4975-86996D7744E8C94A_s7?wid=1536&hei=1536
+SKU-H03,IKEA KALLAX 4×2 Shelf Unit (White),219.99,169.99,standard_5d,false,5,8,20,15,https://www.ikea.com/kw/en/images/products/kallax-shelving-unit-with-4-drawers-with-2-shelf-inserts-white__1246021_pe921916_s5.jpg?f=s
+SKU-H04,Casper Wave Hybrid Mattress (Queen),1999.00,1599.00,standard_5d,true,2,5,5,10,https://cdn.shopify.com/s/files/1/0698/7251/7367/files/casper-wave-hybrid-mattress_2021-08.png
+SKU-H05,Philips Hue White & Color Starter Kit (4 Bulbs + Bridge),199.99,154.99,"standard_5d,express_2d",true,10,8,50,15,https://static01.galaxus.com/productimages/7/0/1/1/0/6/5/6/5/0/0/7/3/6/8/3/0/0/6/0198f557-3586-77ad-92c5-1970ad9ecaeb_sea.jpeg
+SKU-H06,Dyson V15 Detect Cordless Vacuum Cleaner,749.99,599.99,"standard_5d,express_2d",true,3,7,10,13,https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/leap-petite-global/markets/uae-saudi/floor-care/primary/476622-01.png?fmt=png-alpha&scl=1&fmt=png-alpha
+SKU-H07,Nespresso Vertuo Next Coffee Machine,229.99,179.99,"standard_5d,express_2d",true,5,8,20,15,https://media-www.canadiantire.ca/product/living/kitchen/kitchen-appliances/0432790/nespresso-vertuo-next-white--7191af34-902e-45d8-aec9-c5d3490fb2b4.png?imwidth=1024
+SKU-H08,Kindle Scribe 64GB Premium Pen Bundle,339.99,269.99,"standard_5d,express_2d",true,5,8,20,13,https://m.media-amazon.com/images/I/81CWiI0vLPL._AC_SL1500_.jpg
+SKU-H09,Ring Video Doorbell Pro 2 + Chime Pro,279.99,219.99,"standard_5d,express_2d",true,5,8,25,15,https://en-uk.ring.com/cdn/shop/files/ring_battery-video-doorbell-pro_chime-pro_sb_slate2_en_1500x1500_f925ab38-fb74-40b5-bd2e-97cea2e41f7b.png?v=1709643932
+SKU-H10,LIFX A19 Smart LED Bulb (10-pack),149.99,114.99,"standard_5d,express_2d",false,10,8,50,14,https://i1.wp.com/www.simplysmart123.com/wp-content/uploads/2019/07/81WtraBnfhL.jpg?fit=1920,1920&ssl=1

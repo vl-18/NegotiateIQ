@@ -240,7 +240,8 @@ function ProductEditor({ product: initial, selected, onToggleSelect }) {
                 <img
                   src={p.image_url}
                   alt="preview"
-                  className="w-14 h-14 object-cover rounded border border-[var(--border)] flex-shrink-0"
+                  /* old: className="w-14 h-14 object-cover rounded border border-[var(--border)] flex-shrink-0" */
+                  className="w-14 h-14 object-contain bg-white p-1 rounded border border-[var(--border)] flex-shrink-0"
                   onError={(e) => { e.currentTarget.style.display = "none"; }}
                 />
               )}
@@ -672,7 +673,8 @@ function NewProductForm({ onCreated }) {
             <img
               src={form.image_url}
               alt="preview"
-              className="w-14 h-14 object-cover rounded border border-[var(--border)] flex-shrink-0"
+              /* old: className="w-14 h-14 object-cover rounded border border-[var(--border)] flex-shrink-0" */
+              className="w-14 h-14 object-contain bg-white p-1 rounded border border-[var(--border)] flex-shrink-0"
               onError={(e) => { e.currentTarget.style.display = "none"; }}
             />
           )}
