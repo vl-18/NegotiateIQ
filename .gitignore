@@ -23,3 +23,6 @@ firebase-debug.log
 # IDE
 .vscode/settings.json
 .idea/
+
+catalogue_electronics_sample.csv
+catalogue_furniture_sample.csv
