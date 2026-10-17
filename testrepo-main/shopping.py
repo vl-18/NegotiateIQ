@@ -525,7 +525,7 @@ class BuyerReply(BaseModel):
 class GeminiBuyerLLM:
     """Default google-genai caller. Swap for your gemini.py wrapper by passing any LLMFn to ShoppingAgent."""
 
-    def __init__(self, model: Optional[str] = None, temperature: float = 0.7, max_output_tokens: int = 1024,
+    def __init__(self, model: Optional[str] = None, temperature: float = 0.7, max_output_tokens: int = 2048,
                  schema: Any = None, fallback_models: Optional[list] = None):
         self.model = model or os.getenv("SHOPPING_MODEL", "gemini-3.5-flash-lite")
         # Tried in order when the primary model is overloaded (429/5xx) or not available to this key (404).
@@ -936,7 +936,7 @@ def _default_extractor() -> GeminiBuyerLLM:
     if _DEFAULT_EXTRACTOR is None:
         _DEFAULT_EXTRACTOR = GeminiBuyerLLM(
             model=os.getenv("HUMAN_PARSE_MODEL") or None, temperature=0.0,
-            max_output_tokens=512, schema=HumanExtraction)
+            max_output_tokens=1024, schema=HumanExtraction)
     return _DEFAULT_EXTRACTOR
 
 

@@ -1,13 +1,18 @@
 {
   "projects": {
-    "default": "YOUR_FIREBASE_PROJECT_ID"
+    "default": "negotiateiq-510510"
   },
   "targets": {
-    "YOUR_FIREBASE_PROJECT_ID": {
+    "negotiateiq-510510": {
       "hosting": {
-        "buyer":    ["negotiateiq-buyer"],
-        "merchant": ["negotiateiq-merchant"]
+        "buyer": [
+          "negotiateiq-buyer"
+        ],
+        "merchant": [
+          "negotiateiq-merchant"
+        ]
       }
     }
-  }
+  },
+  "etags": {}
 }
