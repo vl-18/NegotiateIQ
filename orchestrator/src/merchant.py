@@ -89,7 +89,7 @@ def apply_rules(
     list_price = product.list_price
 
     # Base: most favourable of (last offer, bulk-discounted list price)
-    base_price   = previous_merchant_price if previous_merchant_price else list_price
+    base_price   = previous_merchant_price if previous_merchant_price is not None else list_price
     bulk_pct     = _bulk_discount_pct(product, quantity)
     bulk_price   = list_price * (1 - bulk_pct / 100)
     offered_price = min(base_price, bulk_price)
@@ -126,16 +126,6 @@ def apply_rules(
     )
     intent = Intent.FINAL_OFFER if is_final else Intent.COUNTER_OFFER
     return terms, intent
-
-
-def should_reject(product: Product, buyer_terms: ProposedTerms | None) -> bool:
-    """
-    True if the buyer is demanding a price strictly below our price floor.
-    We give no ground below the floor — reject immediately.
-    """
-    if not buyer_terms or not buyer_terms.unit_price:
-        return False
-    return buyer_terms.unit_price < product.price_floor
 
 
 # ---------------------------------------------------------------------------
@@ -196,9 +186,8 @@ async def merchant_turn(
 ) -> A2AMessage:
     """
     Process one merchant turn:
-      1. Hard-reject if buyer is below price floor
-      2. Apply rules engine to get constrained terms and intent
-      3. If FINAL_OFFER → use a static firm message (skip Gemini)
+      1. Apply rules engine to get constrained terms and intent
+      2. If FINAL_OFFER → use a static firm message (skip Gemini)
          If COUNTER_OFFER → call Gemini for natural language prose
       4. Return a fully-formed A2AMessage
     """
@@ -206,25 +195,6 @@ async def merchant_turn(
     from firebase_db import get_merchant_config
 
     buyer_terms = buyer_msg.proposed_terms
-
-    # Hard reject: buyer demands below our absolute floor
-    if should_reject(product, buyer_terms):
-        display_text = (
-            f"I appreciate the interest, but ${buyer_terms.unit_price:.2f}/unit "
-            f"is below what we can offer for {product.name}. "
-            f"Our price floor is ${product.price_floor:.2f}/unit."
-        )
-        msg = A2AMessage(
-            session_id=  session.session_id,
-            turn=        session.turn_count + 1,
-            sender=      Sender.MERCHANT_AGENT,
-            receiver=    Sender.SHOPPING_AGENT,
-            intent=      Intent.REJECT,
-            product_id=  product.sku,
-            display_text=display_text,
-        )
-        state_machine.apply(msg)
-        return msg
 
     # Rules engine: compute constrained terms
     previous_price = (
