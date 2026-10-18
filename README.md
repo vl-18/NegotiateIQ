@@ -10,6 +10,12 @@ The shopper side in this repo (three AI personas, or a typed human message) is a
 
 Built on Google Cloud: Gemini, Cloud Run, Firestore and Firebase Hosting.
 
+**Try:**
+
+Merchant portal: [https://negotiateiq-merchant.web.app/](url) 
+
+Buyer portal: [https://negotiateiq-buyer.web.app/](url)
+
 ## Why it's different
 
 - **AI writes. Rules govern.** A Python rules engine decides every number (price, delivery, voucher). Gemini only writes the prose around terms that are already fixed, so a prompt cannot move a price.
